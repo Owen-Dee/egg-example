@@ -17,13 +17,26 @@ module.exports = appInfo => {
 
   // add your middleware config here
   config.middleware = [];
+  // 允许跨域访问, 添加白名单
+  config.security = {
+    csrf: {
+      enable: false,
+      ignoreJSON: true
+    },
+    domainWhiteList: [ 'http://localhost:3000' ]
+  };
+
+  config.cors = {
+    origin: '*',
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH'
+  };
 
   // mysql
   config.sequelize = {
     dialect: 'mysql',
     host: 'localhost',
     port: 3306,
-    database: 'egg-db',
+    database: 'egg',
     username: 'root',
     password: 'shanke123'
   };
