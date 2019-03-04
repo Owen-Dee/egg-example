@@ -7,8 +7,3 @@ module.exports = {
     package: 'egg-sequelize'
   }
 };
-
-  // mongoose: {
-  //   enable: true,
-  //   package: 'egg-mongoose'
-  // },

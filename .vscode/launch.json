@@ -14,7 +14,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "launch project",
+            "name": "launch controller user",
             "program": "/app/controller/user.js"
         }
     ]
