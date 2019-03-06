@@ -30,13 +30,20 @@ module.exports = appInfo => {
     origin: '*',
     allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH'
   };
+  // 官方插件-模板渲染配置
+  config.view = {
+    mapping: {
+      '.pug': 'pug'
+    },
+    defaultViewEngine: 'pug'
+  };
 
   // mysql
   config.sequelize = {
     dialect: 'mysql',
     host: 'localhost',
     port: 3306,
-    database: 'egg',
+    database: 'egg-db',
     username: 'root',
     password: 'shanke123'
   };

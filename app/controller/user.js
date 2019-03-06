@@ -7,14 +7,15 @@ class UserController extends Controller {
         this.ctx.body = await this.service.user.findAll();
     }
 
-    async findOne(obj) {
-        const id = obj.params.id ? obj.params.id : 0;
-        this.ctx.body = await this.service.user.findOne(id);
+    async findById() {
+        const id = this.ctx.params.id;
+        this.ctx.body = await this.service.user.findById(id);
     }
 
-    async update(obj) {
-        const id = obj.params.id ? obj.params.id : 0;
-        this.ctx.body = await this.service.user.update(id);
+    async update() {
+        const id = this.ctx.params.id;
+        const body = this.ctx.request.body;
+        this.ctx.body = await this.ctx.service.user.update(id, body);
     }
 }
 

@@ -4,7 +4,8 @@ const Controller = require('egg').Controller;
 
 class HomeController extends Controller {
   async index() {
-    this.ctx.body = this.service.home.index();
+    await this.ctx.render('portal.pug');
+    // this.ctx.body = this.service.home.index();
   }
 
   async findHot() {

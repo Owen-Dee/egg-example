@@ -6,7 +6,7 @@ module.exports = app => {
         controller
     } = app;
     router.get('/users', controller.user.findAll);
-    router.get('/user/:id', controller.user.findOne);
+    router.get('/user/:id', controller.user.findById);
     router.put('/user/:id', controller.user.update);
 
     // router.post('/user', controller.user.add);
