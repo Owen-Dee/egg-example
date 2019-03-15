@@ -23,6 +23,26 @@ class Portal {
     }
 
     init() {
+        this.AddEventListener();
+    }
+
+    AddEventListener() {
+        const elements = {
+            detailDom: $('.user-table-container .show-user-detail'),
+            editDom: $('.user-table-container .edit-user')
+        };
+
+        elements.detailDom.off('click').on('click', function() {
+            const id = $(this).attr('data-id');
+            window.location.href = `${window.location.origin}/user/${id}`;
+        });
+
+        elements.editDom.off('click').on('click', () => {
+
+        });
+    }
+
+    getUsers() {
         const url = '/users';
         const type = 'Get';
         const data = null;
@@ -68,4 +88,4 @@ class Portal {
 }
 
 let portal = Portal.getInstance();
-portal.getUserById();
+portal.init();

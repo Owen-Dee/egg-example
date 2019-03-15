@@ -14,9 +14,7 @@ class UserService extends Service {
     async findById(id) {
         const user = await this.ctx.model.User.findById(id);
         this.ctx.status = 200;
-        return Object.assign({}, {
-            data: user
-        });
+        return user;
     }
 
     async update(id, body) {

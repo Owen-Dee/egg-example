@@ -8,7 +8,8 @@ module.exports = app => {
         name: STRING(45),
         password: STRING(45),
         age: INTEGER,
-        address: STRING(250)
+        address: STRING(250),
+        role: STRING(45)
     }, {
         freezeTableName: true, // Model 对应的表名将与model名相同
         timestamps: false,

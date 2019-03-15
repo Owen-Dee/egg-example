@@ -4,12 +4,15 @@ const Controller = require('egg').Controller;
 
 class UserController extends Controller {
     async findAll() {
-        this.ctx.body = await this.service.user.findAll();
+        this.ctx.body = await this.ctx.service.user.findAll();
     }
 
     async findById() {
         const id = this.ctx.params.id;
-        this.ctx.body = await this.service.user.findById(id);
+        const user = await this.ctx.service.user.findById(id);
+        await this.ctx.render('detail.pug', {
+            user
+        });
     }
 
     async update() {

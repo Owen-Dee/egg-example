@@ -3,8 +3,10 @@
 const Service = require('egg').Service;
 
 class HomeService extends Service {
-    async index() {
-        return 'hi, egg';
+    async findAll() {
+        const users = await this.ctx.model.User.findAll();
+        this.ctx.status = 200;
+        return users;
     }
 
     findHot() {

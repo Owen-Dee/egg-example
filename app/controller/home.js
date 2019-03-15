@@ -4,8 +4,10 @@ const Controller = require('egg').Controller;
 
 class HomeController extends Controller {
   async index() {
-    await this.ctx.render('portal.pug');
-    // this.ctx.body = this.service.home.index();
+    const users = await this.ctx.service.home.findAll();
+    await this.ctx.render('home.pug', {
+      users
+    });
   }
 
   async findHot() {
